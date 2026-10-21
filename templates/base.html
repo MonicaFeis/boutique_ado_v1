@@ -43,7 +43,7 @@
   {% block extra_js %}
   {% endblock %}
 
- <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
+<title>Boutique Ado {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -83,7 +83,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
               {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
-              <a href="" class="dropdown-item">Product Management</a>
+              <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
               {% endif %}
               <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -116,8 +116,8 @@
           aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        {% include 'includes/mobile_top_header.html' %}
-        {% include 'includes/main_nav.html' %}
+        {% include 'includes/mobile-top-header.html' %}
+        {% include 'includes/main-nav.html' %}
       </nav>
     </div>
     <div id="delivery-banner" class="row text-center">
